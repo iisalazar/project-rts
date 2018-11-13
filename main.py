@@ -1,4 +1,4 @@
-from Statistics import z_test
+from Statistics import z_test, basic
 import sys
 
 
@@ -32,4 +32,5 @@ def main():
 			print("Invalid input")
 
 if __name__ == '__main__':
-	main()
+	basic = basic.basic()
+	print(basic.get_median([1,2,3,4,5,6]))
