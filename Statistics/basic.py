@@ -1,4 +1,4 @@
-class basic:
+class Basic:
 
 	def get_mean(self, data):
 		# to check if all elements in list 'data' is an integer

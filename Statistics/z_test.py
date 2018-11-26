@@ -1,5 +1,6 @@
-from statistics import mean
+from .basic import Basic
 from math import sqrt
+
 
 class one_sample:
 	pass
@@ -20,8 +21,9 @@ class two_sample:
 
 	# get mean for two_sample
 	def get_mean(self):
-		self.mean1 = mean(self.group1)
-		self.mean2 = mean(self.group2)
+		basic = Basic()
+		self.mean1 = basic.get_mean(self.group1)
+		self.mean2 = basic.get_mean(self.group2)
 		return ("Mean for group1: {}\nMean for group2: {}".format(self.mean1, self.mean2))
 
 	# get the variance
