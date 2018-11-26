@@ -34,6 +34,13 @@ def main():
 			print("Invalid input")
 '''
 
+def z_test_test():
+	two_sample = z_test.two_sample()
+	two_sample.add_data(group1 = [1,2,3,4,5], group2 = [2,4,6,8,10])
+	print(two_sample.get_mean())
+	print(two_sample.get_variance())
+	print(two_sample.get_z_value())
+
 def t_test_test():
 	t = t_test.Independent()
 	t.add_elements(group1=[1,2,3,4,5], group2=[6,7,8,9,10])
@@ -46,8 +53,11 @@ def t_test_test():
 	print("Sum of squares 1 \t {}\nSum of squares 2 \t {}".format(SS['SS1'], SS['SS2']))
 	print("computed t-value \t {}".format(t_value['t-computed']))
 if __name__ == '__main__':
+	print("Test for t test\n")
 	t_test_test()
-
+	print("------------------------------")
+	print("Test for z test\n")
+	z_test_test()
 	
 	
 

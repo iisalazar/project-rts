@@ -24,7 +24,8 @@ class two_sample:
 		basic = Basic()
 		self.mean1 = basic.get_mean(self.group1)
 		self.mean2 = basic.get_mean(self.group2)
-		return ("Mean for group1: {}\nMean for group2: {}".format(self.mean1, self.mean2))
+		return {"mean1": self.mean1, "mean2": self.mean2}
+		#return ("Mean for group1: {}\nMean for group2: {}".format(self.mean1, self.mean2))
 
 	# get the variance
 	def get_variance(self):
