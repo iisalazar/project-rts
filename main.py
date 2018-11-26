@@ -33,20 +33,22 @@ def main():
 		else:
 			print("Invalid input")
 '''
-if __name__ == '__main__':
-	#basic = basic.Basic()
-	#print(basic.get_median([1,2,3,4,5,6]))
-	t_test_ind = t_test.Independent()
 
-	t_test_ind.add_elements(group1=[1,2,3,4,5], group2=[6,7,8,9,10])
-	mean = t_test_ind.get_mean()
-	df = t_test_ind.get_df()
-	SS = t_test_ind.get_SS()
-	t_value = t_test_ind.get_t()
+def t_test_test():
+	t = t_test.Independent()
+	t.add_elements(group1=[1,2,3,4,5], group2=[6,7,8,9,10])
+	mean = t.get_mean()
+	df = t.get_df()
+	SS = t.get_SS()
+	t_value = t.get_t()
 	print("Mean1 \t\t\t {}\nMean2 \t\t\t {}".format(mean['mean1'], mean['mean2']))
 	print("Degrees of freedom \t {}".format(df['df']))
 	print("Sum of squares 1 \t {}\nSum of squares 2 \t {}".format(SS['SS1'], SS['SS2']))
 	print("computed t-value \t {}".format(t_value['t-computed']))
+if __name__ == '__main__':
+	t_test_test()
+
+	
 	
 
 
