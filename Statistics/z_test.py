@@ -1,6 +1,6 @@
 from .basic import Basic
 from math import sqrt
-
+import pprint
 
 class one_sample:
 	pass
@@ -21,7 +21,6 @@ class two_sample(Basic):
 
 	# get mean for two_sample
 	def get_mean(self):
-		basic = Basic()
 		self.mean1 = self.getMean(self.group1)
 		self.mean2 = self.getMean(self.group2)
 		return {"mean1": self.mean1, "mean2": self.mean2}
@@ -49,9 +48,18 @@ class two_sample(Basic):
 	# getting the z value from the global variables
 	# mean1, mean2, variance1, variance2,n1 and n2
 	def get_z_value(self, tabular=0):
-		z_computed = (self.mean1 - self.mean2) / sqrt((self.variance1 / len(self.group1) + (self.variance2 / len(self.group2))))
-		return (z_computed)
+		self.z_computed = (self.mean1 - self.mean2) / sqrt((self.variance1 / len(self.group1) + (self.variance2 / len(self.group2))))
+		return (self.z_computed)
 
 	# a future method to gracefully print all the values computed
 	def print_all(self):
-		pass		
+		values = {
+				'z-value': self.z_computed, 
+				'variance for set 1' : self.variance1,
+				'variance for set 2' : self.variance2,
+				'mean for set 1' : self.mean1,
+				'mean for set 2' : self.mean2,
+				'Number of elements for set 1': len(self.group1),
+				'Number of elements for set 2': len(self.group2),
+		}
+		pprint.pprint(values)

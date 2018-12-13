@@ -40,7 +40,8 @@ def z_test_test():
 	print(two_sample.get_mean())
 	print(two_sample.get_variance())
 	print(two_sample.get_z_value())
-
+	print("A list of all values:")
+	two_sample.print_all()
 def t_test_test():
 	t = t_test.Independent()
 	t.add_elements(group1=[1,2,3,4,5], group2=[6,7,8,9,10])
@@ -52,6 +53,7 @@ def t_test_test():
 	print("Degrees of freedom \t {}".format(df['df']))
 	print("Sum of squares 1 \t {}\nSum of squares 2 \t {}".format(SS['SS1'], SS['SS2']))
 	print("computed t-value \t {}".format(t_value['t-computed']))
+	
 if __name__ == '__main__':
 	print("Test for t test\n")
 	t_test_test()
