@@ -4,12 +4,12 @@ from math import sqrt
 class Dependent:
 	pass
 
-class Independent:
+class Independent(Basic):
 
 	def __init__(self):
 		self.group1 = []
 		self.group2 = []
-		self.__basic = Basic()
+		
 
 	def add_elements(self, group1, group2):
 		self.group1 = group1
@@ -17,8 +17,8 @@ class Independent:
 		
 
 	def get_mean(self):
-		self.mean1 = self.__basic.get_mean(self.group1)
-		self.mean2 = self.__basic.get_mean(self.group2)
+		self.mean1 = self.getMean(self.group1)
+		self.mean2 = self.getMean(self.group2)
 		return {'mean1': self.mean1, 'mean2': self.mean2}
 
 	def get_df(self):

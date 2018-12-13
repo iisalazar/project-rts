@@ -5,7 +5,7 @@ from math import sqrt
 class one_sample:
 	pass
 # two-sample z -test ojbect
-class two_sample:
+class two_sample(Basic):
 	# whenever a two_sample object is instantiate, 
 	# 2 new sets of groups are created
 
@@ -22,8 +22,8 @@ class two_sample:
 	# get mean for two_sample
 	def get_mean(self):
 		basic = Basic()
-		self.mean1 = basic.get_mean(self.group1)
-		self.mean2 = basic.get_mean(self.group2)
+		self.mean1 = self.getMean(self.group1)
+		self.mean2 = self.getMean(self.group2)
 		return {"mean1": self.mean1, "mean2": self.mean2}
 		#return ("Mean for group1: {}\nMean for group2: {}".format(self.mean1, self.mean2))
 

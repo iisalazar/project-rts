@@ -1,6 +1,6 @@
 class Basic:
 
-	def get_mean(self, data):
+	def getMean(self, data):
 		# to check if all elements in list 'data' is an integer
 		if self.__is_valid(data):
 			value = 0
@@ -10,7 +10,7 @@ class Basic:
 		else:
 			return ("Error! one element in list is not an integer")
 
-	def get_median(self, data):
+	def getMedian(self, data):
 		data.sort()
 		
 		if len(data)%2:
