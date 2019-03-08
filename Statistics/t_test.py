@@ -57,6 +57,9 @@ class Independent(Basic):
 			}
 		
 	def get_t(self):
-		t_value = abs(self.mean1 - self.mean2) / sqrt( ( (self.SS1 + self.SS2) / self.df ) * (1.0/len(self.group1) + 1.0/len(self.group2)))
-		return {"t-computed": t_value}
-
+		self.get_mean()
+		self.get_df()
+		self.get_SS()
+		#  
+		t_value = abs(self.mean1 - self.mean2) / sqrt( float( (self.SS1 + self.SS2) / self.df ) * float(1.0/len(self.group1)) + float(1.0/len(self.group2))  ) 
+		return t_value
