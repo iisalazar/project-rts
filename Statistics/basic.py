@@ -24,6 +24,12 @@ class Basic:
 			# returns mean between the (len(d)-1 / 2)th and ((len(d)-1 / 2)+1)th item in the list
 			return (float(data[(len(data)-1) / 2 ] + data[(len(data)-1) / 2 + 1]) / 2)
 
+	def getSum(self, data):
+		summation = 0.0
+		for d in data:
+			summation += float(d)
+		return float(summation)
+
 	# a private method that checks if all items in a list is an integer
 	def __is_valid(self, data):
 		for d in data:
