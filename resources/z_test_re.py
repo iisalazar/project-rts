@@ -16,7 +16,8 @@ class zTwoSampleAPI(Resource):
 		group2 = data.get('group2', None)
 		z = two_sample()
 		z.add_data(group1=group1, group2=group2)
-		return {'z_critical' : z.get_z_value()}
+		
+		return { 'data' : z.get_all_data() }
 
 api.add_resource(zTwoSampleAPI, '/stat/z/two_sample/')
 

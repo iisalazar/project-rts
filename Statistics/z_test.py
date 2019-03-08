@@ -68,3 +68,18 @@ class two_sample(Basic):
 				'Number of elements for set 2': len(self.group2),
 		}
 		pprint.pprint(values)
+
+	def get_all_data(self):
+		self.get_mean()
+		self.get_variance()
+		self.get_z_value()
+		data = {
+			'Group 1' : self.group1,
+			'Group 2' : self.group2,
+			'mean1' : self.mean1,
+			'mean2' : self.mean2,
+			'variance1' : self.variance1,
+			'variance2' : self.variance2,
+			'z_critical' : self.z_computed
+		}
+		return data
